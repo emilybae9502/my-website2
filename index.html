@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABOUT BX5-3 — INNOCEAN</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif; background: #f5f4f0; color: #1a1a1a; }
+.page { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.5rem 5rem; }
+
+.cover { background: #FF5722; border-radius: 14px; padding: 2.8rem 2.5rem 2.2rem; margin-bottom: 2rem; }
+.cover h1 { font-size: 36px; font-weight: 700; color: #fff; letter-spacing: -1px; line-height: 1.1; }
+.cover p { font-size: 15px; color: rgba(255,255,255,0.88); margin-top: 10px; line-height: 1.65; }
+.cover .badge { display: inline-block; background: rgba(0,0,0,0.18); color: #fff; font-size: 11px; font-weight: 600; letter-spacing: 1px; padding: 4px 12px; border-radius: 20px; margin-top: 14px; }
+
+.props { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-bottom: 2rem; background: #fff; border-radius: 12px; border: 1px solid #e5e2db; overflow: hidden; }
+.prop { display: flex; gap: 10px; align-items: flex-start; padding: 10px 16px; border-bottom: 1px solid #f0ede6; }
+.prop:nth-child(odd) { border-right: 1px solid #f0ede6; }
+.prop:nth-last-child(-n+2) { border-bottom: none; }
+.prop-label { font-size: 11px; color: #999; min-width: 52px; padding-top: 2px; text-transform: uppercase; letter-spacing: 0.4px; }
+.prop-val { font-size: 13px; color: #1a1a1a; line-height: 1.5; }
+
+.divider { height: 1px; background: #e5e2db; margin: 2rem 0; }
+
+.h2 { font-size: 17px; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
+.body-text { font-size: 14px; color: #555; line-height: 1.8; margin-bottom: 1rem; }
+.callout { background: #fff8f5; border-left: 3px solid #FF5722; border-radius: 0 10px 10px 0; padding: 13px 16px; margin-bottom: 1rem; font-size: 14px; color: #222; line-height: 1.75; }
+
+.card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-bottom: 1rem; }
+.card { background: #fff; border: 1px solid #e5e2db; border-radius: 12px; padding: 1rem 1.1rem; }
+.card-label { font-size: 10px; font-weight: 700; color: #CC4A1A; margin-bottom: 7px; letter-spacing: 1px; }
+.card-body { font-size: 12.5px; color: #555; line-height: 1.65; }
+
+.work-item { background: #fff; border: 1px solid #e5e2db; border-radius: 12px; padding: 1.1rem 1.25rem; margin-bottom: 10px; }
+.wi-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 12px; }
+.wi-title { font-size: 15px; font-weight: 700; color: #1a1a1a; }
+.wi-sub { font-size: 12px; color: #FF5722; margin-top: 3px; font-weight: 500; }
+.wi-meta { display: flex; gap: 5px; flex-shrink: 0; flex-wrap: wrap; justify-content: flex-end; }
+.wi-tag { font-size: 11px; padding: 3px 9px; border-radius: 20px; background: #f5f2ec; color: #777; white-space: nowrap; }
+.wi-rows { border-top: 1px solid #f0ede6; padding-top: 10px; display: flex; flex-direction: column; gap: 7px; }
+.wi-row { display: grid; grid-template-columns: 80px 1fr; gap: 8px; font-size: 13px; }
+.wi-row-label { color: #aaa; font-size: 11px; font-weight: 600; letter-spacing: 0.3px; padding-top: 2px; text-transform: uppercase; }
+.wi-row-val { color: #333; line-height: 1.65; }
+
+.kpi-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; margin-bottom: 1rem; }
+.kpi-card { background: #fff; border: 1px solid #e5e2db; border-radius: 12px; padding: 1.2rem 1rem; text-align: center; }
+.kpi-num { font-size: 28px; font-weight: 700; color: #FF5722; letter-spacing: -1px; }
+.kpi-label { font-size: 11.5px; color: #777; margin-top: 5px; line-height: 1.5; }
+
+.partner-row { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; margin-bottom: 1rem; }
+.partner-card { background: #fff; border: 1px solid #e5e2db; border-radius: 12px; padding: 1.1rem; text-align: center; }
+.partner-name { font-size: 15px; font-weight: 700; color: #1a1a1a; }
+.partner-since { font-size: 11px; font-weight: 600; color: #FF5722; margin-top: 5px; }
+
+.rapo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-bottom: 1rem; }
+.rapo-card { background: #fff; border: 1px solid #e5e2db; border-radius: 12px; padding: 1rem 1.1rem; }
+.rapo-title { font-size: 12px; font-weight: 700; color: #1a1a1a; margin-bottom: 6px; }
+.rapo-body { font-size: 12px; color: #666; line-height: 1.65; }
+
+.award-list { list-style: none; background: #fff; border: 1px solid #e5e2db; border-radius: 12px; overflow: hidden; }
+.award-list li { font-size: 13px; color: #444; padding: 10px 16px; border-bottom: 1px solid #f5f2ec; display: flex; align-items: flex-start; gap: 10px; line-height: 1.6; }
+.award-list li:last-child { border-bottom: none; }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: #FF5722; flex-shrink: 0; margin-top: 7px; }
+
+.person-card { background: #fff; border: 1px solid #e5e2db; border-radius: 12px; padding: 1.1rem 1.25rem; margin-bottom: 10px; }
+.person-header { display: flex; gap: 13px; align-items: center; margin-bottom: 10px; }
+.avatar { width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; flex-shrink: 0; }
+.person-name { font-size: 15px; font-weight: 700; color: #1a1a1a; }
+.person-role { font-size: 12px; color: #888; margin-top: 3px; }
+.person-body { font-size: 13px; color: #555; line-height: 1.75; margin-bottom: 10px; }
+.person-quote { border-left: 3px solid #e5e2db; padding: 6px 12px; margin-bottom: 10px; font-size: 13px; color: #777; font-style: italic; line-height: 1.65; }
+.person-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.person-tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; background: #f5f2ec; color: #666; }
+
+.contact-box { background: #fff; border: 1px solid #e5e2db; border-radius: 12px; padding: 1.2rem 1.5rem; font-size: 14px; color: #444; line-height: 2; }
+.contact-box strong { color: #1a1a1a; font-weight: 700; }
+.section { margin-bottom: 0; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="cover">
+    <h1>ABOUT BX5-3</h1>
+    <p>함께 일할 파트너를 찾고 계시다면,<br>이노션의 BX 5본부 3팀을 만나보세요.</p>
+    <span class="badge">INNOCEAN</span>
+  </div>
+
+  <div class="props">
+    <div class="prop"><span class="prop-label">소속</span><span class="prop-val">이노션 5본부 3팀 (BX5-3)</span></div>
+    <div class="prop"><span class="prop-label">팀장</span><span class="prop-val">박윤수 (87년생, ISFP)</span></div>
+    <div class="prop"><span class="prop-label">팀 철학</span><span class="prop-val">광고주를 승진시키자</span></div>
+    <div class="prop"><span class="prop-label">연락처</span><span class="prop-val">Parkbobeep@innocean.com</span></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="h2">💡 왜 기획팀이 중요한가</div>
+    <div class="callout">대부분의 실무는 담당 기획팀과 밀접하게 커뮤니케이션하며 진행하는 구조입니다.<br><strong>어떤 기획팀과 함께하느냐는 상당히 중요한 부분입니다.</strong></div>
+    <div class="body-text">클라이언트 ↔ 기획팀은 실무의 8할을 함께합니다. 전략, 미디어, Creative, 비용정산, 컨설팅, PR, 오프라인 활동 등 모든 영역이 기획팀을 중심으로 연결되어 있습니다.<br><br>크리덴셜만으로는 파악하기 어려운 부분들이 있습니다 — 우리 캠페인을 맡아줄 팀은 어떤 팀인지, 어떤 성격인지, 어떤 능력이 있을지, 카운터 파트너로서 적합할지.</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="h2">🎯 우리 팀의 일하는 방식</div>
+    <div class="card-grid">
+      <div class="card"><div class="card-label">RESULT</div><div class="card-body">#KPI달성 #수상경력 #제작비절감</div></div>
+      <div class="card"><div class="card-label">ATTITUDE</div><div class="card-body">#새로운시도를두려워하지않는 #넓은업무스콥을커버하는 #기발한전략을제안하는</div></div>
+      <div class="card"><div class="card-label">SOLUTION</div><div class="card-body">#당면문제해결 #장기적솔루션 #선제적제안</div></div>
+    </div>
+    <div class="callout">이런 조건들 모두 중요하지만, <strong>저희는 이런 마인드로 일합니다.</strong></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="h2">📂 주요 캠페인 사례</div>
+
+    <div class="work-item">
+      <div class="wi-header">
+        <div><div class="wi-title">삼성전자 — BESPOKE AI 동화</div><div class="wi-sub">관심 없던 AI 기능 설명을 보고 싶게 만드는 콘텐츠</div></div>
+        <div class="wi-meta"><span class="wi-tag">2025–2026</span><span class="wi-tag">가전</span></div>
+      </div>
+      <div class="wi-rows">
+        <div class="wi-row"><span class="wi-row-label">Background</span><span class="wi-row-val">AI 가전의 필요성을 못 느끼는 소비자들과 AI 기능 자체에 대한 낮은 관여도</span></div>
+        <div class="wi-row"><span class="wi-row-label">Strategy</span><span class="wi-row-val">AI 가전의 기능을 설명하기보다 콘텐츠 매력도를 통해 자연스러운 소비를 유도</span></div>
+        <div class="wi-row"><span class="wi-row-label">Creative</span><span class="wi-row-val">전 세계에 익숙한 동화를 소재로 Bespoke AI 가전의 기능을 녹여 전달하는 AI 동화 시리즈 총 7편 제작</span></div>
+      </div>
+    </div>
+
+    <div class="work-item">
+      <div class="wi-header">
+        <div><div class="wi-title">삼양 불닭소스 — 리런치 캠페인</div><div class="wi-sub">잘하던 것을 더 잘하게</div></div>
+        <div class="wi-meta"><span class="wi-tag">2025</span><span class="wi-tag">F&amp;B</span></div>
+      </div>
+      <div class="wi-rows">
+        <div class="wi-row"><span class="wi-row-label">Background</span><span class="wi-row-val">이전 소스 런칭 캠페인 진행에도 불닭볶음면 대비 글로벌 시장 내 소스 인지도가 매우 낮음</span></div>
+        <div class="wi-row"><span class="wi-row-label">Strategy</span><span class="wi-row-val">불닭볶음면의 성공 자산을 소스로 갖고 올 수 있도록 매운맛이 주는 아드레날린을 Buldak high라는 메시지로 표현</span></div>
+        <div class="wi-row"><span class="wi-row-label">Creative</span><span class="wi-row-val">불닭 먹고 다음날 화장실 가게 되는 인사이트를 활용한 Ride the Buldak high 캠페인. 밈 성격의 숏폼 콘텐츠 형식으로 제작</span></div>
+      </div>
+    </div>
+
+    <div class="work-item">
+      <div class="wi-header">
+        <div><div class="wi-title">트립닷컴 — 지금이야 지금</div><div class="wi-sub">누군가에게는 위기가 우리에게는 무기로</div></div>
+        <div class="wi-meta"><span class="wi-tag">2024</span><span class="wi-tag">OTA</span></div>
+      </div>
+      <div class="wi-rows">
+        <div class="wi-row"><span class="wi-row-label">Background</span><span class="wi-row-val">다 만들어 놓고 틀지 못한 50개의 광고 소재를 활용해 잃어버린 트립닷컴의 존재감을 확보</span></div>
+        <div class="wi-row"><span class="wi-row-label">Strategy</span><span class="wi-row-val">코로나를 통해 모두가 느낀 "여행은 갈 수 있을 때 가야 한다"라는 인사이트를 활용</span></div>
+        <div class="wi-row"><span class="wi-row-label">Creative</span><span class="wi-row-val">'이 광고는 코로나 때문에 나가지 못한 트립닷컴 광고입니다'를 솔직하게 공개하며 메시지를 극대화</span></div>
+      </div>
+    </div>
+
+    <div class="work-item">
+      <div class="wi-header">
+        <div><div class="wi-title">스위첸 — 집에 가자</div><div class="wi-sub">늘 반복되던 집에 가는 일상을 큰 감동으로</div></div>
+        <div class="wi-meta"><span class="wi-tag">2025</span><span class="wi-tag">아파트</span></div>
+      </div>
+      <div class="wi-rows">
+        <div class="wi-row"><span class="wi-row-label">Background</span><span class="wi-row-val">집, 가족에 대한 이야기로 브랜딩을 하고 있는 스위첸의 새로운 캠페인이 필요</span></div>
+        <div class="wi-row"><span class="wi-row-label">Strategy</span><span class="wi-row-val">OECD 기준 노동시간이 긴 대한민국의 현실을 활용. 집에 가자는 메시지가 큰 위로가 되도록 전달하며, 집 하면 가장 먼저 떠오르는 브랜드가 되고자 함</span></div>
+        <div class="wi-row"><span class="wi-row-label">Creative</span><span class="wi-row-val">김창완님의 노래 + 소비자들이 직접 찍은 영상들을 활용해 메시지 공감대 극대화</span></div>
+      </div>
+    </div>
+
+    <div class="work-item">
+      <div class="wi-header">
+        <div><div class="wi-title">한화 태양의 숲 — 학숲지</div><div class="wi-sub">미래 세대의 환경 인식 향상을 위해 광고가 아닌 교육으로</div></div>
+        <div class="wi-meta"><span class="wi-tag">2025</span><span class="wi-tag">ESG</span></div>
+      </div>
+      <div class="wi-rows">
+        <div class="wi-row"><span class="wi-row-label">Background</span><span class="wi-row-val">ESG 중요성에 따라 나무를 심는 브랜드들이 늘어나 한화 태양의 숲만의 가치가 퇴색</span></div>
+        <div class="wi-row"><span class="wi-row-label">Strategy</span><span class="wi-row-val">미래 세대를 위한 물리적 공간의 나무 심기도 중요하지만, 미래 세대들의 친환경 인식의 나무를 심는 것도 중요</span></div>
+        <div class="wi-row"><span class="wi-row-label">Creative</span><span class="wi-row-val">대한민국 부모들의 관심이 높은 교육의 현장으로 침투. 자가학습 교재가 되는 학숲지 제작 배포</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="h2">📈 KPI 성과 사례</div>
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="kpi-num">70%</div><div class="kpi-label">오가닉 조회수 확보<br>(A사 조기종료 사례)</div></div>
+      <div class="kpi-card"><div class="kpi-num">260%</div><div class="kpi-label">목표 대비 참여율 달성<br>(B사 참여형 캠페인)</div></div>
+      <div class="kpi-card"><div class="kpi-num">3년</div><div class="kpi-label">카테고리 1위 브랜드<br>달성 (C사)</div></div>
+    </div>
+    <div class="callout">KPI 달성을 위한 캠페인이 아닌, <strong>좋은 캠페인을 만들면 KPI 달성은 따라온다</strong>고 믿습니다.</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="h2">🤝 장기 파트너사</div>
+    <div class="partner-row">
+      <div class="partner-card"><div class="partner-name">Hanwha</div><div class="partner-since">Since 2020~</div></div>
+      <div class="partner-card"><div class="partner-name">SWITZEN</div><div class="partner-since">Since 2012~</div></div>
+      <div class="partner-card"><div class="partner-name">Trip.com</div><div class="partner-since">Since 2024~</div></div>
+    </div>
+    <div class="body-text">한번 만나면 오래 갑니다. 꾸준한 관심과 소통으로 관계에서의 신뢰감을 높여가고 있습니다.</div>
+    <div class="rapo-grid">
+      <div class="rapo-card"><div class="rapo-title">혜택은 유연하게</div><div class="rapo-body">긴 시간 함께하는 만큼 브랜드의 비용 효율성도 함께 고민하는 팀</div></div>
+      <div class="rapo-card"><div class="rapo-title">소통은 활발하게</div><div class="rapo-body">때론 격식 없이 툭툭 가볍게도 고민을 나눠볼 수 있는 팀</div></div>
+      <div class="rapo-card"><div class="rapo-title">다 사람이 하는 일이니까</div><div class="rapo-body">서로 더 잘 통하도록 코드, 정서, 친밀도를 위한 노력도 하는 팀</div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="h2">🏆 주요 수상 실적</div>
+    <ul class="award-list">
+      <li><span class="dot"></span>2026 ADFEST — Digital &amp; Social Lotus Bronze / Creative Strategy Lotus (Consumer Goods) Bronze / Creative Strategy Lotus (Gutsy Strategy) Bronze (삼양 불닭)</li>
+      <li><span class="dot"></span>2026 소비자가 뽑은 좋은 광고상 — 디지털부문 좋은광고상 (한화, KCC건설 스위첸)</li>
+      <li><span class="dot"></span>2025 대한민국광고대상 — TV영상부문 대상 (KCC건설 스위첸) / 온라인영상부문 동상 (삼양 불닭)</li>
+      <li><span class="dot"></span>2025 올해의 광고상 — 전체부문 그랑프리 (KCC건설 스위첸)</li>
+      <li><span class="dot"></span>2025 서울영상광고제 — TV부문 금상 (KCC건설 스위첸) / 크리에이티브 효과부문 동상 (삼양 불닭) / 연출부문 동상 (삼양 불닭)</li>
+      <li><span class="dot"></span>2024 대한민국광고대상 — Creative Strategy부문 대상 (트립닷컴)</li>
+      <li><span class="dot"></span>2023 Red Dot — Corporate Design &amp; Identity / Advertising: Integrated Campaign / Finance App (다올 저축은행)</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="h2">👥 팀 멤버</div>
+
+    <div class="person-card">
+      <div class="person-header">
+        <div class="avatar" style="background:#FFF0EB;color:#CC4A1A;">박</div>
+        <div><div class="person-name">박윤수</div><div class="person-role">팀장 · 87년생 · ISFP · 기획 14년차 (since 2013)</div></div>
+      </div>
+      <div class="person-body">F&B, 금융(1–2금융권), 기업PR, APP, ESG, 가전 등 다양한 카테고리와 영상, 소셜, 팝업, 굿즈, 유튜브 채널 콘텐츠 등 다양한 솔루션 경험. 기획 14년차이면서 1년차 신입 팀장.</div>
+      <div class="person-tags">
+        <span class="person-tag">오래된 것들</span><span class="person-tag">밈 · 케이팝</span><span class="person-tag">술과 음식 페어링</span><span class="person-tag">계절 감각 걷기</span>
+      </div>
+    </div>
+
+    <div class="person-card">
+      <div class="person-header">
+        <div class="avatar" style="background:#E6F1FB;color:#185FA5;">김</div>
+        <div><div class="person-name">김상우 (Kim Sang Woo)</div><div class="person-role">Senior Manager · 9년차 기획자</div></div>
+      </div>
+      <div class="person-body">가전, 패션, F&B, 금융 등 다양한 카테고리의 프로젝트를 가능하게 만들어온 기획자.</div>
+      <div class="person-quote">"안된다는 말보다, 어려운 일도 항상 가능하게 해주셔서 좋았습니다" — 광고주 팀장</div>
+      <div class="person-tags">
+        <span class="person-tag">Passionista</span><span class="person-tag">Baduk King (아마추어 2단)</span><span class="person-tag">Memory Collector</span><span class="person-tag">Shortform Digger (주 24h)</span>
+      </div>
+    </div>
+
+    <div class="person-card">
+      <div class="person-header">
+        <div class="avatar" style="background:#EAF3DE;color:#3B6D11;">원</div>
+        <div><div class="person-name">원명규</div><div class="person-role">Senior Manager</div></div>
+      </div>
+      <div class="person-body">다방면에 둥근 제네럴리스트를 지향하면서도 거기에 딱 1%, 독특한 시각을 더할 수 있는 사람.</div>
+      <div class="person-tags"><span class="person-tag">제네럴리스트</span><span class="person-tag">1% 독특한 시각</span></div>
+    </div>
+
+    <div class="person-card">
+      <div class="person-header">
+        <div class="avatar" style="background:#EEEDFE;color:#534AB7;">배</div>
+        <div><div class="person-name">배소정 (Emily Sojeong Bae)</div><div class="person-role">Manager · Studied in US · Surfed in AUS</div></div>
+      </div>
+      <div class="person-body">제네시스, 삼성전자 등 글로벌 브랜드의 360° 캠페인 기획. 온/오프라인을 넘나드는 입체적인 브랜드 경험 설계. 데이터 너머의 맥락을 짚어내고 "왜?"라는 질문으로 프로젝트의 본질을 탐색.</div>
+      <div class="person-tags">
+        <span class="person-tag">360°+ Global Campaign</span><span class="person-tag">PRO-질문러</span><span class="person-tag">Quality IS ALL</span><span class="person-tag">DOLL collector</span><span class="person-tag">아마추어 명리학자</span>
+      </div>
+    </div>
+
+    <div class="person-card">
+      <div class="person-header">
+        <div class="avatar" style="background:#EAF3DE;color:#3B6D11;">변</div>
+        <div><div class="person-name">변혜림 (Hyerim Byun)</div><div class="person-role">Manager · hyerim.byun@innocean.com</div></div>
+      </div>
+      <div class="person-body">가전, 화장품, 금융부터 기업PR까지 폭넓은 산업군을 아우르는 프로젝트 경험. 기획 역량과 디자인 AI 활용 능력을 결합하여 업무 프로세스를 혁신하고 최상의 결과물을 도출.</div>
+      <div class="person-tags">
+        <span class="person-tag">Strategic Partner</span><span class="person-tag">AI 활용</span><span class="person-tag">여행 인사이트</span><span class="person-tag">트렌드 리딩</span>
+      </div>
+    </div>
+
+    <div class="person-card">
+      <div class="person-header">
+        <div class="avatar" style="background:#FAEEDA;color:#854F0B;">김</div>
+        <div><div class="person-name">김태호 (Taeho Kim)</div><div class="person-role">Manager</div></div>
+      </div>
+      <div class="person-body">B2B부터 여행, 건설, 전자까지 넓고 다양한 산업군의 브랜드와 협업. 정보 요약, 도식화, 시각 자료 개발 등 능동적인 AI 활용으로 빠른 업무 대응과 폭넓은 커버리지를 지원.</div>
+      <div class="person-tags">
+        <span class="person-tag">Key Campaign</span><span class="person-tag">Bold Use of AI</span><span class="person-tag">Wine · Running · Backpacking</span><span class="person-tag">Vintage Clothing Lover</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="contact-box">
+    문의사항은 언제나 환영입니다.<br>
+    <strong>Tel.</strong> 010-7485-0258 &nbsp;&nbsp; <strong>E-mail.</strong> Parkbobeep@innocean.com
+  </div>
+
+</div>
+</body>
+</html>
